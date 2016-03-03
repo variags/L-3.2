@@ -16,10 +16,12 @@ import java.io.PrintWriter;
 public class SignInServlet extends HttpServlet{
 
     private final AccountService accountService;
-    // private final UsersDAO usersDAO = null;
+
+
     public SignInServlet(AccountService accountService) {
         this.accountService = accountService;
     }
+
 
 
     public void doPost(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
@@ -27,20 +29,33 @@ public class SignInServlet extends HttpServlet{
         String login = request.getParameter("login");
         String password = request.getParameter("password");
 
+
+
+
+
         if (login == null || password == null) {
             response.setContentType("text/html;charset=utf-8");
             response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
             return;
         }
+        UserProfile profile = null;
+        try {
+            profile = accountService.getUser(login);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
-        UserProfile profile = accountService.getUserByLogin(login);
-        if (profile == null || !profile.getPass().equals(password)) {
+
+        if (profile == null || !profile.getLogin().equals(login)|| !profile.getPass().equals(password)) {
             response.setContentType("text/html;charset=utf-8");
             response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
             return;
         }
-      //  usersDAO.getUserId(login);
-        accountService.addSession(request.getSession().getId(), profile);
+
+
+
+
+
         response.setStatus(HttpServletResponse.SC_OK);
         PrintWriter pw = response.getWriter();
         pw.println("Authorized: " + request.getParameter("login"));
@@ -48,30 +63,8 @@ public class SignInServlet extends HttpServlet{
     }
 
 
-  /*  public void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException{
 
-        String login = request.getParameter("login");
-        String pass = request.getParameter("pass");
 
-        if (login == null || pass == null) {
-            response.setContentType("text/html;charset=utf-8");
-            response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-            return;
-        }
-
-        UserProfile profile = accountService.getUserByLogin(login);
-        if (profile == null || !profile.getPass().equals(pass)) {
-            response.setContentType("text/html;charset=utf-8");
-            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-            return;
-        }
-
-        accountService.addSession(request.getSession().getId(), profile);
-        response.setStatus(HttpServletResponse.SC_OK);
-        PrintWriter pw = response.getWriter();
-        pw.println("Authorized");
-
-    }*/
 
 
 

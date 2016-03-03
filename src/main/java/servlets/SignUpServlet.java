@@ -2,7 +2,6 @@ package servlets;
 
 import accounts.AccountService;
 import accounts.UserProfile;
-import dbService.dao.UsersDAO;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -15,10 +14,11 @@ import java.io.IOException;
  */
 public class SignUpServlet extends HttpServlet {
     private final AccountService accountService;
-  private final UsersDAO usersDAO = null;
+
 
     public SignUpServlet(AccountService accountService) {
-       this.accountService = accountService;
+
+        this.accountService = accountService;
 
 
     }
@@ -29,21 +29,20 @@ public class SignUpServlet extends HttpServlet {
 
         String login = request.getParameter("login");
         String password = request.getParameter("password");
-        if(login != null|| password != null) {
-
-         //   usersDAO.getUserId(login);
-            accountService.addNewUser(new UserProfile(login, password, ""));
-            //PrintWriter pw = response.getWriter();
-            //pw.println("Done!");
+        if (login != null || password != null && login != null  ) {
+            try {
+                accountService.addNewUser(new UserProfile(login, password, ""));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
             response.setStatus(HttpServletResponse.SC_OK);
 
-        }else{
+        } else {
             response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
         }
-        //accountService.addNewUser(new UserProfile(pa));
+
 
     }
-
 
 
 }

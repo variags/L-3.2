@@ -5,8 +5,10 @@ package accounts;
  */
 public class UserProfile {
     private final String login;
-    private final String pass;
-    private final String email;
+    private String pass;
+    private String email;
+    private long id;
+
 
     public UserProfile(String login, String pass, String email) {
         this.login = login;
@@ -16,9 +18,12 @@ public class UserProfile {
 
     public UserProfile(String login) {
         this.login = login;
-        this.pass = login;
-        this.email = login;
+        //this.pass = password;
+        //this.email = login;
+        this.id = id;
     }
+
+
 
     public String getLogin() {
         return login;
@@ -30,5 +35,9 @@ public class UserProfile {
 
     public String getEmail() {
         return email;
+    }
+
+    public long getId() {
+        return id;
     }
 }

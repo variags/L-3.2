@@ -6,6 +6,8 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
 
+import java.io.Serializable;
+
 /**
  * @author v.chibrikov
  *         <p>
@@ -25,16 +27,16 @@ public class UsersDAO {
 
     }
 
-    public UsersDataSet get(long id) throws HibernateException {
-        return (UsersDataSet) session.get(UsersDataSet.class, id);
+    public  UsersDataSet get(long id) throws HibernateException {
+        return (UsersDataSet) session.get(UsersDataSet.class, (Serializable) id);
     }
 
-    public long getUserId(String name) throws HibernateException {
+   public UsersDataSet getUser(String login) throws HibernateException {
         Criteria criteria = session.createCriteria(UsersDataSet.class);
-        return ((UsersDataSet) criteria.add(Restrictions.eq("name", name)).uniqueResult()).getId();
+        return ((UsersDataSet) criteria.add(Restrictions.eq("login", login)).uniqueResult());
     }
 
-    public long insertUser(String name) throws HibernateException {
-        return (Long) session.save(new UsersDataSet(name));
+    public long insertUser(String login , String password) throws HibernateException {
+        return (Long) session.save(new UsersDataSet(login,password));
     }
 }

@@ -160,3 +160,123 @@ Caused by: java.lang.IllegalStateException: The file is locked: nio:C:/Users/m.s
 	at org.h2.mvstore.FileStore.open(FileStore.java:172)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:337)
 	... 37 more
+03-02 18:41:42 jdbc[6]: null
+org.h2.message.DbException: Незакрытое приложением соединение уничтожено сборщиком мусора
+The connection was not closed by the application and is garbage collected [90018-187]
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:174)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:119)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:92)
+	at org.h2.Driver.connect(Driver.java:72)
+	at org.hibernate.engine.jdbc.connections.internal.DriverConnectionCreator.makeConnection(DriverConnectionCreator.java:55)
+	at org.hibernate.engine.jdbc.connections.internal.BasicConnectionCreator.createConnection(BasicConnectionCreator.java:75)
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$1.run(DriverManagerConnectionProviderImpl.java:128)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.h2.jdbc.JdbcSQLException: Незакрытое приложением соединение уничтожено сборщиком мусора
+The connection was not closed by the application and is garbage collected [90018-187]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 17 more
+03-02 18:45:00 jdbc[6]: null
+org.h2.message.DbException: Незакрытое приложением соединение уничтожено сборщиком мусора
+The connection was not closed by the application and is garbage collected [90018-187]
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:174)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:119)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:92)
+	at org.h2.Driver.connect(Driver.java:72)
+	at org.hibernate.engine.jdbc.connections.internal.DriverConnectionCreator.makeConnection(DriverConnectionCreator.java:55)
+	at org.hibernate.engine.jdbc.connections.internal.BasicConnectionCreator.createConnection(BasicConnectionCreator.java:75)
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$1.run(DriverManagerConnectionProviderImpl.java:128)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.h2.jdbc.JdbcSQLException: Незакрытое приложением соединение уничтожено сборщиком мусора
+The connection was not closed by the application and is garbage collected [90018-187]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 17 more
+03-02 18:59:55 jdbc[6]: null
+org.h2.message.DbException: Незакрытое приложением соединение уничтожено сборщиком мусора
+The connection was not closed by the application and is garbage collected [90018-187]
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:174)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:119)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:92)
+	at org.h2.Driver.connect(Driver.java:72)
+	at org.hibernate.engine.jdbc.connections.internal.DriverConnectionCreator.makeConnection(DriverConnectionCreator.java:55)
+	at org.hibernate.engine.jdbc.connections.internal.BasicConnectionCreator.createConnection(BasicConnectionCreator.java:75)
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$1.run(DriverManagerConnectionProviderImpl.java:128)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.h2.jdbc.JdbcSQLException: Незакрытое приложением соединение уничтожено сборщиком мусора
+The connection was not closed by the application and is garbage collected [90018-187]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 17 more
+03-03 13:18:38 jdbc[6]: null
+org.h2.message.DbException: Незакрытое приложением соединение уничтожено сборщиком мусора
+The connection was not closed by the application and is garbage collected [90018-187]
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:174)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:119)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:92)
+	at org.h2.Driver.connect(Driver.java:72)
+	at org.hibernate.engine.jdbc.connections.internal.DriverConnectionCreator.makeConnection(DriverConnectionCreator.java:55)
+	at org.hibernate.engine.jdbc.connections.internal.BasicConnectionCreator.createConnection(BasicConnectionCreator.java:75)
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$1.run(DriverManagerConnectionProviderImpl.java:128)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.h2.jdbc.JdbcSQLException: Незакрытое приложением соединение уничтожено сборщиком мусора
+The connection was not closed by the application and is garbage collected [90018-187]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 17 more
+03-03 13:22:01 jdbc[6]: null
+org.h2.message.DbException: Незакрытое приложением соединение уничтожено сборщиком мусора
+The connection was not closed by the application and is garbage collected [90018-187]
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:174)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:119)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:92)
+	at org.h2.Driver.connect(Driver.java:72)
+	at org.hibernate.engine.jdbc.connections.internal.DriverConnectionCreator.makeConnection(DriverConnectionCreator.java:55)
+	at org.hibernate.engine.jdbc.connections.internal.BasicConnectionCreator.createConnection(BasicConnectionCreator.java:75)
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$1.run(DriverManagerConnectionProviderImpl.java:128)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.h2.jdbc.JdbcSQLException: Незакрытое приложением соединение уничтожено сборщиком мусора
+The connection was not closed by the application and is garbage collected [90018-187]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 17 more
