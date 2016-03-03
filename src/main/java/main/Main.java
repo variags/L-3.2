@@ -2,7 +2,6 @@ package main;
 
 
 import accounts.AccountService;
-import dbService.DBException;
 import dbService.DBService;
 import org.eclipse.jetty.server.Handler;
 import org.eclipse.jetty.server.Server;
@@ -19,17 +18,6 @@ public class Main {
         DBService dbService = new DBService();
         dbService.printConnectInfo();
 
-        try {
-
-            long userId = dbService.addUser("admin", "admin");
-            System.out.println("Added user id: " + userId);
-
-
-
-
-        } catch (DBException e) {
-            e.printStackTrace();
-        }
 
 
 
